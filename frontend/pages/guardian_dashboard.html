@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Guardian Control Hub</title>
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Routes</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a class="active" href="guardian_dashboard.html">Guardian</a>
+        <a href="guardians.html">Contacts</a>
+        <a href="profile.html">Profile</a>
+        <a href="live_tracking.html">Live Track</a>
+        <a href="mobility_services.html">Mobility</a>
+        <a href="emergency_hub.html">Emergency</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>Guardian Control Hub</h1>
+          <p>Real-time companion tracking, route deviation alerts, and live emergency contact dispatch controls.</p>
+        </div>
+        <div class="status-pill"><span class="status-dot"></span>Live Sync Active</div>
+      </section>
+
+      <!-- Deviation warning banner -->
+      <div id="deviationWarningBox" class="alert-banner" style="display:none; margin-bottom:24px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px;color:var(--red)"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div style="flex: 1;">
+          <strong style="color:var(--red); font-size:1.1rem; display:block; margin-bottom:4px;">🚨 COMPANION ROUTE DEVIATION DETECTED!</strong>
+          <span style="font-size:0.9rem; color:var(--ink);">The vehicle has deviated from the safest calculated route (Old Mill Road stretch). Safety desk has been notified.</span>
+        </div>
+        <div class="actions" style="margin:0;">
+          <button class="danger" id="btnAcknowledgeAlert" style="min-height:36px; padding:6px 12px; font-size:0.8rem;">Acknowledge</button>
+        </div>
+      </div>
+
+      <section class="grid two">
+        <!-- Map and Companion Status -->
+        <div class="grid">
+          <div class="surface">
+            <h2>Active Trip Telemetry Map</h2>
+            <div id="guardianMap" class="map-container" style="height: 380px;"></div>
+            
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+              <div>
+                <strong>Live Companion Sharing</strong>
+                <p style="font-size:0.85rem; color:var(--muted)">Telemetry link shared via secure SMS token.</p>
+              </div>
+              <label class="toggle-row" style="padding:0;">
+                <input type="checkbox" id="guardianShareCheckbox" checked />
+                Sharing Active
+              </label>
+            </div>
+            
+            <div class="actions">
+              <button class="secondary" id="btnSimulateDeviation" type="button">Simulate Path Deviation</button>
+              <a class="button-link danger" href="sos.html">Emergency Override SOS</a>
+            </div>
+          </div>
+
+          <!-- Alert History Logs -->
+          <div class="surface">
+            <h2>Guardian Alert History Logs</h2>
+            <div class="list" id="guardianAlertHistory" style="max-height: 250px; overflow-y: auto;">
+              <div class="list-item" style="border-left: 4px solid var(--green);">
+                <div class="list-title"><span>Telemetry Link Activated</span><span style="font-size:0.8rem; color:var(--muted)">17:10:05</span></div>
+                <p style="font-size:0.85rem; color:var(--muted)">Security handshake established. Tracking token sync verified.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Contacts Registry -->
+        <div class="grid">
+          <section class="surface">
+            <h2>Emergency Contacts Register</h2>
+            <p style="color:var(--muted); font-size:0.85rem; margin-bottom:16px;">These contacts will receive instantaneous SMS coordinates if SOS is triggered.</p>
+            
+            <div class="list" id="guardianContactList" style="margin-bottom:24px;">
+              <p class="empty">Loading contacts registry...</p>
+            </div>
+
+            <hr style="border:none; border-top:1px solid var(--line); margin-bottom:20px;" />
+
+            <h3>Register New Contact</h3>
+            <form id="addContactForm" style="margin-top:12px;">
+              <div class="form-grid">
+                <label>Contact Name
+                  <input name="name" required placeholder="e.g. John Doe" />
+                </label>
+                <label>Phone Number
+                  <input name="phone" required placeholder="e.g. +91 98765 43210" />
+                </label>
+                <label>Relation Type
+                  <select name="type">
+                    <option value="guardian">Guardian / Family</option>
+                    <option value="police">Police Dispatch</option>
+                    <option value="emergency">Emergency Services</option>
+                    <option value="women_safety">Women Helpline</option>
+                    <option value="mobility">Other / Transit Desk</option>
+                  </select>
+                </label>
+                <label>Priority
+                  <select name="priority">
+                    <option value="1">Priority 1 (Primary)</option>
+                    <option value="2" selected>Priority 2 (Secondary)</option>
+                  </select>
+                </label>
+              </div>
+              <div class="actions">
+                <button type="submit">Register Contact</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="../script.js"></script>
+    <script>
+      // Page specific logic for guardian dashboard live tracking simulation
+      let guardianMapInstance = null;
+      let companionMarker = null;
+      let pathPolyline = null;
+
+      const routeCoordinates = [
+        [12.9716, 77.5946], // Central Station
+        [12.9762, 77.6021], // Market Street
+        [12.9663, 77.6154], // River Walk
+        [12.9920, 77.6251], // Old Mill Road (Deviation zone)
+        [12.9851, 77.6463]  // Tech Park
+      ];
+
+      function initGuardianMap() {
+        const mapContainer = document.getElementById("guardianMap");
+        if (!mapContainer || typeof L === 'undefined') return;
+
+        guardianMapInstance = L.map('guardianMap').setView([12.9762, 77.6150], 13);
+        const theme = document.documentElement.getAttribute("data-theme") || "dark";
+        const tileUrl = theme === "dark" 
+          ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+          : 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+
+        L.tileLayer(tileUrl, {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap &copy; CARTO'
+        }).addTo(guardianMapInstance);
+
+        // Draw intended path
+        pathPolyline = L.polyline(routeCoordinates, {
+          color: 'var(--accent)',
+          weight: 4,
+          opacity: 0.8,
+          dashArray: '5, 8'
+        }).addTo(guardianMapInstance);
+
+        // Place markers at stops
+        routeCoordinates.forEach((coords, idx) => {
+          const names = ["Central Station", "Market Street", "River Walk", "Old Mill Road", "Tech Park"];
+          L.circleMarker(coords, {
+            radius: 6,
+            color: 'var(--accent)',
+            fillColor: '#fff',
+            fillOpacity: 1
+          }).addTo(guardianMapInstance).bindTooltip(names[idx]);
+        });
+
+        // Live companion marker
+        companionMarker = L.marker(routeCoordinates[0]).addTo(guardianMapInstance)
+          .bindPopup("<strong>Companion Location</strong><br/>Status: Normal transit").openPopup();
+
+        // Start movement simulation loop
+        let currentIdx = 0;
+        const interval = setInterval(() => {
+          if (!document.getElementById("guardianShareCheckbox").checked) return;
+          
+          currentIdx = (currentIdx + 1) % routeCoordinates.length;
+          const targetCoords = routeCoordinates[currentIdx];
+          companionMarker.setLatLng(targetCoords);
+          
+          // Log coordinates
+          const logList = document.getElementById("guardianAlertHistory");
+          if (logList) {
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+            logList.insertAdjacentHTML('afterbegin', `
+              <div class="list-item" style="border-left:4px solid var(--accent); padding:10px 14px;">
+                <div class="list-title"><span style="font-size:0.85rem;">GPS Signal Received</span><span style="font-size:0.75rem; color:var(--muted)">${time}</span></div>
+                <p style="font-size:0.8rem; color:var(--muted)">Coords: ${targetCoords[0].toFixed(4)}, ${targetCoords[1].toFixed(4)} (Normal transit)</p>
+              </div>
+            `);
+          }
+        }, 12000);
+      }
+
+      document.getElementById('btnSimulateDeviation')?.addEventListener('click', () => {
+        const warning = document.getElementById('deviationWarningBox');
+        const logList = document.getElementById('guardianAlertHistory');
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+        
+        if (warning) {
+          warning.style.display = 'flex';
+          // Move marker off route to a deviance point
+          if (companionMarker && guardianMapInstance) {
+            const deviancePoint = [12.9990, 77.6190]; // Off route north of Old Mill Road
+            companionMarker.setLatLng(deviancePoint);
+            guardianMapInstance.panTo(deviancePoint);
+            companionMarker.setPopupContent("<strong>⚠️ DEVANCE ALERT</strong><br/>Route deviation detected!").openPopup();
+          }
+
+          if (logList) {
+            logList.insertAdjacentHTML('afterbegin', `
+              <div class="list-item" style="border-left:4px solid var(--red); padding:12px 14px;">
+                <div class="list-title"><span style="color:var(--red);">⚠️ Path Deviancy Alarm</span><span style="font-size:0.75rem; color:var(--muted)">${time}</span></div>
+                <p style="font-size:0.82rem; color:var(--ink)">ALERT: Companion has drifted 420m off safe route vectors near Old Mill Road. Dispatch units notified.</p>
+              </div>
+            `);
+          }
+        }
+      });
+
+      document.getElementById('btnAcknowledgeAlert')?.addEventListener('click', () => {
+        const warning = document.getElementById('deviationWarningBox');
+        if (warning) warning.style.display = 'none';
+        if (companionMarker) {
+          companionMarker.setLatLng(routeCoordinates[0]);
+          companionMarker.setPopupContent("<strong>Companion Location</strong><br/>Status: Reset to start").openPopup();
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(initGuardianMap, 100);
+      });
+    </script>
+  </body>
+</html>

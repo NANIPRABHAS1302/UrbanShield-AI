@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Predictive Safety Intelligence</title>
+    <meta name="description" content="UrbanShield AI coordinates computer vision anomalies, graph networks, and multi-agent reinforcement learning simulation for secure urban mobility." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a class="active" href="index.html">Overview</a>
+        <a href="pages/dashboard.html">Dashboard</a>
+        <a href="pages/route_analysis.html">Routes</a>
+        <a href="pages/women_mode.html">Women Mode</a>
+        <a href="pages/sos.html">SOS</a>
+        <a href="pages/guardian_dashboard.html">Guardian</a>
+        <a href="pages/guardians.html">Contacts</a>
+        <a href="pages/profile.html">Profile</a>
+        <a href="pages/live_tracking.html">Live Track</a>
+        <a href="pages/mobility_services.html">Mobility</a>
+        <a href="pages/emergency_hub.html">Emergency</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>UrbanShield AI</h1>
+          <p>Don't Just Navigate. Anticipate.</p>
+        </div>
+        <div class="status-pill"><span class="status-dot"></span>System Active</div>
+      </section>
+
+      <!-- Stats row -->
+      <section class="grid three" id="dashboardStats" style="margin-bottom: 24px;">
+        <div class="metric-card">
+          <div class="metric-label">Loading...</div>
+          <div class="metric-value">-</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Loading...</div>
+          <div class="metric-value">-</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Loading...</div>
+          <div class="metric-value">-</div>
+        </div>
+      </section>
+
+      <section class="grid two">
+        <!-- Route Intelligence Widget -->
+        <div class="surface">
+          <div class="split-actions">
+            <h2>Route Safety Analysis</h2>
+            <a class="button-link secondary" href="pages/route_analysis.html">Open Full Page</a>
+          </div>
+          <form data-route-form data-result-target="routeResult" data-auto-run>
+            <div class="form-grid">
+              <label>Start Zone
+                <select name="start_zone" data-zone-select data-default="central_station"></select>
+              </label>
+              <label>Destination
+                <select name="end_zone" data-zone-select data-default="tech_park"></select>
+              </label>
+              <label>Preference
+                <select name="route_preference">
+                  <option value="safest">Safest Path</option>
+                  <option value="balanced">Balanced Risk/Time</option>
+                  <option value="fastest">Fastest Connection</option>
+                </select>
+              </label>
+              <label>Departure Time
+                <input name="departure_time" type="datetime-local" id="overviewDepTime" />
+              </label>
+              <label class="toggle-row full">
+                <input name="women_mode" type="checkbox" id="overviewWomenMode" />
+                Enable Women Safety Mode (Prioritize lit paths, response density)
+              </label>
+            </div>
+            <div class="actions">
+              <button type="submit">Analyze Risk & Route</button>
+            </div>
+          </form>
+          <div class="result" id="routeResult"></div>
+        </div>
+
+        <div class="grid">
+          <!-- Active Heatmap list -->
+          <section class="surface">
+            <h2>City Zones Risk Heatmap</h2>
+            <div class="list" id="heatmapList"></div>
+          </section>
+          
+          <!-- AI Pipeline status -->
+          <section class="surface">
+            <h2>AI Model Pipeline Lifecycle</h2>
+            <div class="pipeline" id="pipelineList"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Autofill current time into the datetime input
+      document.addEventListener("DOMContentLoaded", () => {
+        const now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        const input = document.getElementById("overviewDepTime");
+        if (input) {
+          input.value = now.toISOString().slice(0, 16);
+        }
+      });
+    </script>
+  </body>
+</html>

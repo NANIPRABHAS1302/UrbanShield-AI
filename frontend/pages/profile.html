@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — User Profile</title>
+    <meta name="description" content="Manage your UrbanShield AI safety profile, emergency details, and personal preferences." />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Routes</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a href="guardian_dashboard.html">Guardian</a>
+        <a href="guardians.html">Contacts</a>
+        <a class="active" href="profile.html">Profile</a>
+        <a href="live_tracking.html">Live Track</a>
+        <a href="mobility_services.html">Mobility</a>
+        <a href="emergency_hub.html">Emergency</a>
+      </nav>
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>User Safety Profile</h1>
+          <p>Your personal details power smarter emergency responses and guardian notifications.</p>
+        </div>
+      </section>
+
+      <section class="grid two">
+        <div class="surface">
+          <h2>Profile Details</h2>
+          <form id="profileForm" class="form-grid">
+            <div class="form-group">
+              <label for="profileName">Full Name *</label>
+              <input type="text" id="profileName" name="name" placeholder="Enter your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="profileEmail">Email *</label>
+              <input type="email" id="profileEmail" name="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="profilePhone">Phone *</label>
+              <input type="tel" id="profilePhone" name="phone" placeholder="+91 98765 43210" required />
+            </div>
+            <div class="form-group">
+              <label for="profileGender">Gender</label>
+              <select id="profileGender" name="gender">
+                <option value="prefer_not_to_say">Prefer not to say</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-binary</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="profileHome">Home Location</label>
+              <input type="text" id="profileHome" name="home_location" placeholder="e.g. Koramangala, Bengaluru" />
+            </div>
+            <div class="form-group">
+              <label for="profileWork">Work Location</label>
+              <input type="text" id="profileWork" name="work_location" placeholder="e.g. Whitefield, Bengaluru" />
+            </div>
+            <div class="form-group">
+              <label for="profileBlood">Blood Group</label>
+              <select id="profileBlood" name="blood_group">
+                <option value="">Select</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <button type="submit" class="primary">Save Profile</button>
+            </div>
+          </form>
+          <div id="profileResult" style="margin-top:16px;"></div>
+        </div>
+
+        <div class="surface">
+          <h2>Why This Matters</h2>
+          <div class="list">
+            <div class="list-item" style="border-left:4px solid var(--green);">
+              <div class="list-title"><span>🚑 Emergency Response</span></div>
+              <div class="list-meta">Your blood group and medical info helps first responders act faster.</div>
+            </div>
+            <div class="list-item" style="border-left:4px solid var(--accent);">
+              <div class="list-title"><span>👥 Guardian Alerts</span></div>
+              <div class="list-meta">Your name and phone appear in SOS broadcasts to your guardians.</div>
+            </div>
+            <div class="list-item" style="border-left:4px solid #7c3aed;">
+              <div class="list-title"><span>📍 Smart Routing</span></div>
+              <div class="list-meta">Home and work locations help optimize your daily safety routes.</div>
+            </div>
+            <div class="list-item" style="border-left:4px solid var(--amber);">
+              <div class="list-title"><span>🔒 Privacy First</span></div>
+              <div class="list-meta">All data stored locally. No cloud sync. No third-party access.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

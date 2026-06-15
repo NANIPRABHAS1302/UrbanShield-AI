@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Smart City Safety Platform</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Routes</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a href="guardian_dashboard.html">Guardian</a>
+        <a href="guardians.html">Contacts</a>
+        <a href="profile.html">Profile</a>
+        <a href="live_tracking.html">Live Track</a>
+        <a href="mobility_services.html">Mobility</a>
+        <a href="emergency_hub.html">Emergency</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <!-- Hero Section -->
+      <section class="page-head" style="flex-direction: column; align-items: center; text-align: center; padding: 60px 0 40px;">
+        <h1 style="font-size: 3.5rem; font-family: 'Outfit', sans-serif; font-weight: 800; background: linear-gradient(135deg, #fff, var(--muted)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Predictive Safety Intelligence</h1>
+        <p style="font-size: 1.25rem; max-width: 700px; margin: 16px auto 28px; line-height: 1.6;">
+          UrbanShield AI harnesses computer vision anomaly detection, graph neural network pathfinding, and multi-agent reinforcement learning simulation to protect citizens and enable secure urban mobility.
+        </p>
+        <div class="actions">
+          <a class="button-link" href="dashboard.html">Enter Operations Dashboard</a>
+          <a class="button-link secondary" href="route_analysis.html">Analyze Route Safety</a>
+        </div>
+      </section>
+
+      <!-- Operations Gateways -->
+      <section class="grid four" style="margin-bottom: 40px;">
+        <div class="metric-card" style="padding: 24px; text-align: left;">
+          <div class="metric-label" style="color:var(--accent);">Gateway 01</div>
+          <h3 style="font-family:'Outfit',sans-serif; font-size:1.2rem; margin: 8px 0;">Route Analysis</h3>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom: 16px;">Evaluate shortest vs safest travel vectors using GNN node weights.</p>
+          <a class="button-link secondary" href="route_analysis.html" style="min-height:36px; padding:6px 12px; font-size:0.8rem; width:100%;">Open Analysis</a>
+        </div>
+        <div class="metric-card" style="padding: 24px; text-align: left;">
+          <div class="metric-label" style="color:var(--green);">Gateway 02</div>
+          <h3 style="font-family:'Outfit',sans-serif; font-size:1.2rem; margin: 8px 0;">Women Safety Shield</h3>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom: 16px;">Enforce lighting score penalties, check help points and darkness variables.</p>
+          <a class="button-link secondary" href="women_mode.html" style="min-height:36px; padding:6px 12px; font-size:0.8rem; width:100%;">Toggle Shield</a>
+        </div>
+        <div class="metric-card" style="padding: 24px; text-align: left;">
+          <div class="metric-label" style="color:var(--blue);">Gateway 03</div>
+          <h3 style="font-family:'Outfit',sans-serif; font-size:1.2rem; margin: 8px 0;">Guardian Dashboard</h3>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom: 16px;">Sync live companion GPS, track route deviance warnings and logs.</p>
+          <a class="button-link secondary" href="guardian_dashboard.html" style="min-height:36px; padding:6px 12px; font-size:0.8rem; width:100%;">Open Guardian</a>
+        </div>
+        <div class="metric-card" style="padding: 24px; text-align: left;">
+          <div class="metric-label" style="color:var(--red);">Gateway 04</div>
+          <h3 style="font-family:'Outfit',sans-serif; font-size:1.2rem; margin: 8px 0;">Emergency SOS</h3>
+          <p style="font-size:0.85rem; color:var(--muted); margin-bottom: 16px;">Trigger instant emergency SMS broadcasts and responder dispatch alerts.</p>
+          <a class="button-link secondary" href="sos.html" style="min-height:36px; padding:6px 12px; font-size:0.8rem; width:100%;">Trigger SOS</a>
+        </div>
+      </section>
+
+      <!-- Tech Stack Details -->
+      <section class="grid two">
+        <!-- AI Pipeline -->
+        <div class="surface">
+          <h2>Predictive AI Pipeline Stack</h2>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom: 20px;">Four coordinated AI modules ingest telemetry and calculate real-time safe vectors:</p>
+          
+          <div class="list">
+            <div class="list-item" style="border-left: 4px solid var(--accent);">
+              <div class="list-title"><span>01 &bull; CNN Computer Vision Module</span></div>
+              <p style="font-size:0.85rem; color:var(--muted); margin-top:4px;">Infers camera anomaly indexes, motion stability, and lighting quality from mock CCTV telemetry.</p>
+            </div>
+            <div class="list-item" style="border-left: 4px solid var(--blue);">
+              <div class="list-title"><span>02 &bull; GNN NetworkX Graph Router</span></div>
+              <p style="font-size:0.85rem; color:var(--muted); margin-top:4px;">Computes route metrics over city topology, weighting edges by distance, crime history, and lighting scores.</p>
+            </div>
+            <div class="list-item" style="border-left: 4px solid var(--green);">
+              <div class="list-title"><span>03 &bull; Multi-Agent Reinforcement Learning (MARL)</span></div>
+              <p style="font-size:0.85rem; color:var(--muted); margin-top:4px;">Simulates patrol mitigation vectors (patrols, crowd density flow) to calculate residual travel risk.</p>
+            </div>
+            <div class="list-item" style="border-left: 4px solid var(--amber);">
+              <div class="list-title"><span>04 &bull; Weighted Pydantic Risk Aggregator</span></div>
+              <p style="font-size:0.85rem; color:var(--muted); margin-top:4px;">Combines GNN, CNN, and MARL outputs with historical records to assign final safety bands (Low to Critical).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Danger zones list -->
+        <div class="surface">
+          <h2>Monitored City Danger Zones</h2>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:20px;">Active threat windows currently identified by the safety intelligence platform:</p>
+          <div class="list" id="dangerList">
+            <p class="empty">Loading monitored zones...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+[
+  {
+    "zone_id": "old_mill_road",
+    "severity": 0.88,
+    "active_from": "20:00",
+    "active_to": "05:00",
+    "reasons": ["low lighting", "low footfall", "recent theft reports"],
+    "recommendation": "Avoid after 8 PM unless escorted or using a verified cab pickup."
+  },
+  {
+    "zone_id": "river_walk",
+    "severity": 0.72,
+    "active_from": "19:00",
+    "active_to": "04:00",
+    "reasons": ["isolated stretch", "limited CCTV", "late response time"],
+    "recommendation": "Prefer East Metro or Market Street connector after sunset."
+  },
+  {
+    "zone_id": "park_avenue",
+    "severity": 0.61,
+    "active_from": "22:00",
+    "active_to": "04:00",
+    "reasons": ["low night footfall", "mixed lighting coverage"],
+    "recommendation": "Use University Gate connector for late travel."
+  },
+  {
+    "zone_id": "market_street",
+    "severity": 0.45,
+    "active_from": "18:00",
+    "active_to": "23:00",
+    "reasons": ["dense evening crowd", "pickpocketing complaints"],
+    "recommendation": "Stay on the main road and use public transport exits."
+  },
+  {
+    "zone_id": "kanakapura",
+    "severity": 0.82,
+    "active_from": "18:00",
+    "active_to": "06:00",
+    "reasons": ["extremely low footfall", "no CCTV", "rural fringe isolation"],
+    "recommendation": "Avoid solo travel after sunset. Use verified cab services only."
+  },
+  {
+    "zone_id": "ramanagara",
+    "severity": 0.78,
+    "active_from": "19:00",
+    "active_to": "05:00",
+    "reasons": ["rural stretch", "poor lighting", "long police response time"],
+    "recommendation": "Travel in groups. Share live location with guardians."
+  },
+  {
+    "zone_id": "nelamangala",
+    "severity": 0.70,
+    "active_from": "20:00",
+    "active_to": "05:00",
+    "reasons": ["suburban isolation", "limited patrol coverage", "no help points"],
+    "recommendation": "Prefer Hebbal connector or national highway routes."
+  },
+  {
+    "zone_id": "majestic",
+    "severity": 0.55,
+    "active_from": "21:00",
+    "active_to": "05:00",
+    "reasons": ["high pickpocketing", "dense crowds at bus terminal", "late-night vulnerability"],
+    "recommendation": "Stick to well-lit metro corridors. Avoid isolated bus bays after 10 PM."
+  },
+  {
+    "zone_id": "kengeri",
+    "severity": 0.62,
+    "active_from": "20:00",
+    "active_to": "05:00",
+    "reasons": ["poor lighting", "suburban stretch", "limited CCTV"],
+    "recommendation": "Use metro connectivity where available. Avoid walking after dark."
+  },
+  {
+    "zone_id": "marathahalli",
+    "severity": 0.48,
+    "active_from": "22:00",
+    "active_to": "04:00",
+    "reasons": ["construction zones", "uneven road lighting"],
+    "recommendation": "Stay on the ORR service road. Prefer Indiranagar route."
+  }
+]

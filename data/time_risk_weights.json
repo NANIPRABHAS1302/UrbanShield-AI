@@ -1,0 +1,27 @@
+{
+  "morning": {
+    "hours": [5, 11],
+    "risk": 0.18,
+    "label": "Morning"
+  },
+  "afternoon": {
+    "hours": [12, 16],
+    "risk": 0.12,
+    "label": "Afternoon"
+  },
+  "evening": {
+    "hours": [17, 20],
+    "risk": 0.3,
+    "label": "Evening"
+  },
+  "night": {
+    "hours": [21, 23],
+    "risk": 0.55,
+    "label": "Night"
+  },
+  "late_night": {
+    "hours": [0, 4],
+    "risk": 0.72,
+    "label": "Late Night"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "hospitals": [
+    { "name": "St. John's Medical College Hospital", "zone_id": "koramangala", "phone": "080-2206-5000", "lat": 12.9290, "lng": 77.6210, "emergency": true, "trauma_center": true },
+    { "name": "Manipal Hospital (HAL Road)", "zone_id": "indiranagar", "phone": "080-2502-4444", "lat": 12.9745, "lng": 77.6485, "emergency": true, "trauma_center": true },
+    { "name": "Columbia Asia (Whitefield)", "zone_id": "whitefield", "phone": "080-4500-9900", "lat": 12.9680, "lng": 77.7460, "emergency": true, "trauma_center": false },
+    { "name": "Narayana Health (Electronic City)", "zone_id": "electronic_city", "phone": "080-7122-2222", "lat": 12.8380, "lng": 77.6750, "emergency": true, "trauma_center": true },
+    { "name": "MS Ramaiah Memorial Hospital", "zone_id": "hebbal", "phone": "080-4050-5050", "lat": 13.0310, "lng": 77.5920, "emergency": true, "trauma_center": true },
+    { "name": "Victoria Hospital", "zone_id": "majestic", "phone": "080-2670-1150", "lat": 12.9595, "lng": 77.5730, "emergency": true, "trauma_center": true },
+    { "name": "Jayadeva Institute of Cardiology", "zone_id": "jayanagar", "phone": "080-2653-4782", "lat": 12.9315, "lng": 77.5850, "emergency": true, "trauma_center": false },
+    { "name": "BGS Gleneagles Hospital", "zone_id": "kengeri", "phone": "080-2678-5678", "lat": 12.9060, "lng": 77.4840, "emergency": true, "trauma_center": true },
+    { "name": "Sparsh Hospital (RR Nagar)", "zone_id": "rr_nagar", "phone": "080-6668-4400", "lat": 12.9270, "lng": 77.5200, "emergency": true, "trauma_center": false },
+    { "name": "Apollo Hospital (Bannerghatta)", "zone_id": "banashankari", "phone": "080-2630-4050", "lat": 12.9030, "lng": 77.5560, "emergency": true, "trauma_center": true }
+  ]
+}

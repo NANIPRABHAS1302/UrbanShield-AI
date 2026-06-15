@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Safety Operations Dashboard</title>
+    <link rel="stylesheet" href="../style.css" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Routes</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a href="guardian_dashboard.html">Guardian</a>
+        <a href="guardians.html">Contacts</a>
+        <a href="profile.html">Profile</a>
+        <a href="live_tracking.html">Live Track</a>
+        <a href="mobility_services.html">Mobility</a>
+        <a href="emergency_hub.html">Emergency</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>Safety Operations Dashboard</h1>
+          <p>Real-time predictive safety overlays, telemetry feeds, and command controls.</p>
+        </div>
+        <button class="secondary" type="button" onclick="location.reload()">Force Sync</button>
+      </section>
+
+      <!-- Command Center Widgets -->
+      <section class="widget-grid" id="commandCenterWidgets" style="margin-bottom: 24px;">
+        <div class="widget-card"><div class="widget-icon">⏳</div><div class="widget-label">Loading...</div><div class="widget-value">—</div></div>
+      </section>
+
+      <!-- Stats row -->
+      <section class="grid three" id="dashboardStats" style="margin-bottom: 24px;">
+        <div class="metric-card">
+          <div class="metric-label">Loading...</div>
+          <div class="metric-value">-</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Loading...</div>
+          <div class="metric-value">-</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Loading...</div>
+          <div class="metric-value">-</div>
+        </div>
+      </section>
+
+      <!-- Map & Sidebar layout -->
+      <section class="grid two">
+        <!-- Interactive Map Container -->
+        <div class="surface">
+          <h2>Predictive Safety Overlay</h2>
+          <div id="safetyMap" class="map-container"></div>
+          
+          <div class="map-legend">
+            <div class="legend-item">
+              <span class="legend-color" style="background:#10b981;"></span>
+              <span>Safe Zone (Low Risk)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background:#f59e0b;"></span>
+              <span>Congested Connector</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background:#ef4444;"></span>
+              <span>Danger Zone (Active Alert)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-color" style="background:#3b82f6;"></span>
+              <span>Emergency Coverage / Help Points</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar telemetry -->
+        <div class="grid">
+          <!-- Active Danger Zones List -->
+          <section class="surface">
+            <h2>Active Danger Windows</h2>
+            <div class="list" id="dangerList"></div>
+          </section>
+
+          <!-- Zone Heatmap -->
+          <section class="surface">
+            <h2>Live Risk Heatmap</h2>
+            <div class="list" id="heatmapList"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="../script.js"></script>
+  </body>
+</html>

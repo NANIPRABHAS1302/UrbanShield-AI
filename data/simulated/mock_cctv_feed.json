@@ -1,0 +1,146 @@
+{
+  "central_station": {
+    "lighting_quality": 0.82,
+    "motion_stability": 0.72,
+    "anomaly_score": 0.18,
+    "camera_health": 0.94
+  },
+  "market_street": {
+    "lighting_quality": 0.73,
+    "motion_stability": 0.51,
+    "anomaly_score": 0.31,
+    "camera_health": 0.82
+  },
+  "tech_park": {
+    "lighting_quality": 0.9,
+    "motion_stability": 0.83,
+    "anomaly_score": 0.1,
+    "camera_health": 0.9
+  },
+  "university_gate": {
+    "lighting_quality": 0.86,
+    "motion_stability": 0.78,
+    "anomaly_score": 0.14,
+    "camera_health": 0.88
+  },
+  "river_walk": {
+    "lighting_quality": 0.42,
+    "motion_stability": 0.44,
+    "anomaly_score": 0.57,
+    "camera_health": 0.52
+  },
+  "old_mill_road": {
+    "lighting_quality": 0.34,
+    "motion_stability": 0.38,
+    "anomaly_score": 0.68,
+    "camera_health": 0.45
+  },
+  "east_metro": {
+    "lighting_quality": 0.79,
+    "motion_stability": 0.7,
+    "anomaly_score": 0.21,
+    "camera_health": 0.86
+  },
+  "park_avenue": {
+    "lighting_quality": 0.66,
+    "motion_stability": 0.55,
+    "anomaly_score": 0.39,
+    "camera_health": 0.7
+  },
+  "whitefield": {
+    "lighting_quality": 0.80,
+    "motion_stability": 0.74,
+    "anomaly_score": 0.16,
+    "camera_health": 0.88
+  },
+  "electronic_city": {
+    "lighting_quality": 0.78,
+    "motion_stability": 0.70,
+    "anomaly_score": 0.20,
+    "camera_health": 0.85
+  },
+  "koramangala": {
+    "lighting_quality": 0.84,
+    "motion_stability": 0.76,
+    "anomaly_score": 0.15,
+    "camera_health": 0.90
+  },
+  "indiranagar": {
+    "lighting_quality": 0.88,
+    "motion_stability": 0.80,
+    "anomaly_score": 0.12,
+    "camera_health": 0.92
+  },
+  "marathahalli": {
+    "lighting_quality": 0.65,
+    "motion_stability": 0.58,
+    "anomaly_score": 0.34,
+    "camera_health": 0.72
+  },
+  "hebbal": {
+    "lighting_quality": 0.72,
+    "motion_stability": 0.66,
+    "anomaly_score": 0.24,
+    "camera_health": 0.80
+  },
+  "yelahanka": {
+    "lighting_quality": 0.62,
+    "motion_stability": 0.55,
+    "anomaly_score": 0.30,
+    "camera_health": 0.68
+  },
+  "kengeri": {
+    "lighting_quality": 0.50,
+    "motion_stability": 0.48,
+    "anomaly_score": 0.42,
+    "camera_health": 0.58
+  },
+  "rr_nagar": {
+    "lighting_quality": 0.60,
+    "motion_stability": 0.54,
+    "anomaly_score": 0.32,
+    "camera_health": 0.66
+  },
+  "banashankari": {
+    "lighting_quality": 0.72,
+    "motion_stability": 0.65,
+    "anomaly_score": 0.22,
+    "camera_health": 0.78
+  },
+  "jayanagar": {
+    "lighting_quality": 0.80,
+    "motion_stability": 0.72,
+    "anomaly_score": 0.15,
+    "camera_health": 0.84
+  },
+  "majestic": {
+    "lighting_quality": 0.68,
+    "motion_stability": 0.50,
+    "anomaly_score": 0.38,
+    "camera_health": 0.82
+  },
+  "devanahalli": {
+    "lighting_quality": 0.75,
+    "motion_stability": 0.70,
+    "anomaly_score": 0.14,
+    "camera_health": 0.90
+  },
+  "nelamangala": {
+    "lighting_quality": 0.42,
+    "motion_stability": 0.40,
+    "anomaly_score": 0.48,
+    "camera_health": 0.45
+  },
+  "ramanagara": {
+    "lighting_quality": 0.36,
+    "motion_stability": 0.35,
+    "anomaly_score": 0.55,
+    "camera_health": 0.40
+  },
+  "kanakapura": {
+    "lighting_quality": 0.32,
+    "motion_stability": 0.30,
+    "anomaly_score": 0.60,
+    "camera_health": 0.38
+  }
+}

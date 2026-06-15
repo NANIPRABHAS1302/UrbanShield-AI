@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Safety & Risk Trends</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Routes</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a href="guardian_dashboard.html">Guardian</a>
+        <a href="guardians.html">Contacts</a>
+        <a href="profile.html">Profile</a>
+        <a href="live_tracking.html">Live Track</a>
+        <a href="mobility_services.html">Mobility</a>
+        <a href="emergency_hub.html">Emergency</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>Safety Trends & AI Confidence</h1>
+          <p>Longitudinal zone safety metrics, predictive model performance, and chronological danger windows.</p>
+        </div>
+        <div class="status-pill"><span class="status-dot"></span>Inference Active</div>
+      </section>
+
+      <!-- Stats row -->
+      <section class="grid three" style="margin-bottom: 24px;">
+        <div class="metric-card">
+          <div class="metric-label">CNN Confidence</div>
+          <div class="metric-value">91.4%</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">GNN Recall</div>
+          <div class="metric-value">88.7%</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Simulated MARL Mitigations</div>
+          <div class="metric-value">0.32 max</div>
+        </div>
+      </section>
+
+      <div class="grid two">
+        <!-- Zone Safety Breakdown Table -->
+        <section class="surface">
+          <h2>Predictive Safety Trends By Zone</h2>
+          <p style="color:var(--muted); font-size:0.85rem; margin-bottom:12px;">Dynamic breakdown of camera feed anomaly index, crime statistics, and average patrol coverage.</p>
+          
+          <table class="premium-table">
+            <thead>
+              <tr>
+                <th>Zone Name</th>
+                <th>Base Risk</th>
+                <th>CCTV Coverage</th>
+                <th>Patrol Speed</th>
+              </tr>
+            </thead>
+            <tbody id="safetyTrendsTableBody">
+              <tr>
+                <td colspan="4" class="empty">Loading safety matrices...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Time periods and model confidence -->
+        <div class="grid">
+          <section class="surface">
+            <h2>Time-of-Day Risk Windows</h2>
+            <p style="color:var(--muted); font-size:0.85rem; margin-bottom:16px;">Systematic risk adjustments based on departure hour weighting multipliers.</p>
+            
+            <div class="list" id="timeWeightsList">
+              <p class="empty">Loading weights...</p>
+            </div>
+          </section>
+
+          <section class="surface">
+            <h2>AI Model Pipeline Lifecycle</h2>
+            <p style="color:var(--muted); font-size:0.85rem; margin-bottom:16px;">How data flows through CNN telemetry, GNN pathweights, MARL simulation, and RiskClassifier combine logic.</p>
+            <div class="pipeline" id="trendsPipelineList">
+              <span>CNN CCTV Telemetry</span>
+              <span>GNN Path Weights</span>
+              <span>MARL Mitigation Adjusters</span>
+              <span>Classifier combine()</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "stops": [
+    { "name": "Majestic Bus Terminal", "zone_id": "majestic", "routes": ["500A", "500D", "365", "401"], "frequency_min": 5 },
+    { "name": "Koramangala Bus Stand", "zone_id": "koramangala", "routes": ["201R", "500C", "342"], "frequency_min": 8 },
+    { "name": "Indiranagar CMH Road", "zone_id": "indiranagar", "routes": ["201M", "314", "340"], "frequency_min": 10 },
+    { "name": "Whitefield ITPL Stop", "zone_id": "whitefield", "routes": ["500G", "KBS-7", "335E"], "frequency_min": 12 },
+    { "name": "Electronic City Phase-1", "zone_id": "electronic_city", "routes": ["500E", "356", "G-14"], "frequency_min": 10 },
+    { "name": "Marathahalli Bridge", "zone_id": "marathahalli", "routes": ["500C", "KBS-8", "340A"], "frequency_min": 8 },
+    { "name": "Hebbal Flyover Stop", "zone_id": "hebbal", "routes": ["401", "286", "290"], "frequency_min": 10 },
+    { "name": "Jayanagar 4th Block", "zone_id": "jayanagar", "routes": ["15", "201C", "210D"], "frequency_min": 7 },
+    { "name": "Banashankari TTMC", "zone_id": "banashankari", "routes": ["210", "215A", "220"], "frequency_min": 6 },
+    { "name": "Central Station Bus Bay", "zone_id": "central_station", "routes": ["500A", "365", "401"], "frequency_min": 5 },
+    { "name": "RR Nagar Bus Stop", "zone_id": "rr_nagar", "routes": ["230", "215D", "RR-1"], "frequency_min": 12 },
+    { "name": "Yelahanka Bus Stand", "zone_id": "yelahanka", "routes": ["290", "286A", "401A"], "frequency_min": 15 },
+    { "name": "Kengeri Bus Terminal", "zone_id": "kengeri", "routes": ["K-1", "215K", "230A"], "frequency_min": 15 },
+    { "name": "Devanahalli Bus Stop", "zone_id": "devanahalli", "routes": ["KIAS-7", "401D"], "frequency_min": 20 },
+    { "name": "Nelamangala Bus Stand", "zone_id": "nelamangala", "routes": ["NLM-1", "401N"], "frequency_min": 25 }
+  ]
+}

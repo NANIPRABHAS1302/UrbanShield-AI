@@ -1,0 +1,30 @@
+[
+  {
+    "id": "police_control",
+    "name": "City Police Control Room",
+    "type": "police",
+    "phone": "100",
+    "priority": 1
+  },
+  {
+    "id": "national_emergency",
+    "name": "National Emergency Response",
+    "type": "emergency",
+    "phone": "112",
+    "priority": 1
+  },
+  {
+    "id": "women_helpline",
+    "name": "Women Safety Helpline",
+    "type": "women_safety",
+    "phone": "1091",
+    "priority": 1
+  },
+  {
+    "id": "urban_mobility_desk",
+    "name": "Urban Mobility Safety Desk",
+    "type": "mobility",
+    "phone": "+91-80-5555-0101",
+    "priority": 2
+  }
+]

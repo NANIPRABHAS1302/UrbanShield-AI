@@ -1,0 +1,146 @@
+{
+  "central_station": {
+    "recent_incidents_30d": 11,
+    "theft_reports": 7,
+    "harassment_reports": 2,
+    "response_delay_score": 0.18
+  },
+  "market_street": {
+    "recent_incidents_30d": 16,
+    "theft_reports": 11,
+    "harassment_reports": 4,
+    "response_delay_score": 0.28
+  },
+  "tech_park": {
+    "recent_incidents_30d": 5,
+    "theft_reports": 3,
+    "harassment_reports": 1,
+    "response_delay_score": 0.2
+  },
+  "university_gate": {
+    "recent_incidents_30d": 7,
+    "theft_reports": 3,
+    "harassment_reports": 2,
+    "response_delay_score": 0.25
+  },
+  "river_walk": {
+    "recent_incidents_30d": 20,
+    "theft_reports": 8,
+    "harassment_reports": 7,
+    "response_delay_score": 0.58
+  },
+  "old_mill_road": {
+    "recent_incidents_30d": 24,
+    "theft_reports": 13,
+    "harassment_reports": 8,
+    "response_delay_score": 0.68
+  },
+  "east_metro": {
+    "recent_incidents_30d": 8,
+    "theft_reports": 4,
+    "harassment_reports": 2,
+    "response_delay_score": 0.22
+  },
+  "park_avenue": {
+    "recent_incidents_30d": 14,
+    "theft_reports": 6,
+    "harassment_reports": 5,
+    "response_delay_score": 0.42
+  },
+  "whitefield": {
+    "recent_incidents_30d": 6,
+    "theft_reports": 4,
+    "harassment_reports": 1,
+    "response_delay_score": 0.22
+  },
+  "electronic_city": {
+    "recent_incidents_30d": 8,
+    "theft_reports": 5,
+    "harassment_reports": 2,
+    "response_delay_score": 0.26
+  },
+  "koramangala": {
+    "recent_incidents_30d": 9,
+    "theft_reports": 5,
+    "harassment_reports": 3,
+    "response_delay_score": 0.20
+  },
+  "indiranagar": {
+    "recent_incidents_30d": 7,
+    "theft_reports": 4,
+    "harassment_reports": 2,
+    "response_delay_score": 0.16
+  },
+  "marathahalli": {
+    "recent_incidents_30d": 13,
+    "theft_reports": 7,
+    "harassment_reports": 4,
+    "response_delay_score": 0.35
+  },
+  "hebbal": {
+    "recent_incidents_30d": 10,
+    "theft_reports": 5,
+    "harassment_reports": 3,
+    "response_delay_score": 0.24
+  },
+  "yelahanka": {
+    "recent_incidents_30d": 11,
+    "theft_reports": 6,
+    "harassment_reports": 3,
+    "response_delay_score": 0.32
+  },
+  "kengeri": {
+    "recent_incidents_30d": 15,
+    "theft_reports": 8,
+    "harassment_reports": 5,
+    "response_delay_score": 0.48
+  },
+  "rr_nagar": {
+    "recent_incidents_30d": 12,
+    "theft_reports": 6,
+    "harassment_reports": 4,
+    "response_delay_score": 0.36
+  },
+  "banashankari": {
+    "recent_incidents_30d": 8,
+    "theft_reports": 4,
+    "harassment_reports": 2,
+    "response_delay_score": 0.22
+  },
+  "jayanagar": {
+    "recent_incidents_30d": 6,
+    "theft_reports": 3,
+    "harassment_reports": 2,
+    "response_delay_score": 0.18
+  },
+  "majestic": {
+    "recent_incidents_30d": 22,
+    "theft_reports": 14,
+    "harassment_reports": 6,
+    "response_delay_score": 0.15
+  },
+  "devanahalli": {
+    "recent_incidents_30d": 4,
+    "theft_reports": 2,
+    "harassment_reports": 1,
+    "response_delay_score": 0.30
+  },
+  "nelamangala": {
+    "recent_incidents_30d": 17,
+    "theft_reports": 9,
+    "harassment_reports": 5,
+    "response_delay_score": 0.62
+  },
+  "ramanagara": {
+    "recent_incidents_30d": 19,
+    "theft_reports": 10,
+    "harassment_reports": 6,
+    "response_delay_score": 0.70
+  },
+  "kanakapura": {
+    "recent_incidents_30d": 21,
+    "theft_reports": 11,
+    "harassment_reports": 7,
+    "response_delay_score": 0.75
+  }
+}

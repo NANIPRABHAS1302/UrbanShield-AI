@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Citizen Incidents Hub</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Route Analysis</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a href="guardian.html">Guardian</a>
+        <a class="active" href="incidents.html">Incidents</a>
+        <a href="safety_trends.html">Safety Trends</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>Citizen Incident Reporting</h1>
+          <p>Report safety issues, active hazards, or suspicious activities to update the community risk maps.</p>
+        </div>
+      </section>
+
+      <section class="grid two">
+        <!-- Report Form -->
+        <section class="surface">
+          <h2>Log Safety Incident</h2>
+          <form id="incidentForm">
+            <div class="form-grid">
+              <label>Select Affected Zone
+                <select name="zone_id" data-zone-select data-default="market_street"></select>
+              </label>
+              
+              <label>Incident Severity
+                <select name="severity">
+                  <option value="low">Low (Minor Hazard / Delay)</option>
+                  <option value="medium" selected>Medium (Active Suspicious Behavior)</option>
+                  <option value="high">High (Threat / Crime in Progress)</option>
+                  <option value="critical">Critical (Immediate Danger / SOS)</option>
+                </select>
+              </label>
+
+              <label class="full">Incident Classification
+                <select name="incident_type" id="incidentTypeSelect">
+                  <option value="suspicious_activity" selected>Suspicious Activity / Loitering</option>
+                  <option value="harassment">Harassment / Stalking</option>
+                  <option value="theft">Theft / Pickpocketing</option>
+                  <option value="unsafe_infrastructure">Unsafe Infrastructure (No Lights, etc.)</option>
+                  <option value="other">Other Incident Type</option>
+                </select>
+              </label>
+
+              <label class="full">Detailed Description
+                <textarea name="description" placeholder="Provide details like vehicle descriptions, exact location, or infrastructure status.">Suspicious activity reported near the transit exit. Proceed with caution.</textarea>
+              </label>
+            </div>
+            <div class="actions">
+              <button type="submit">Submit Community Report</button>
+            </div>
+          </form>
+          <div id="incidentResult" class="result"></div>
+        </section>
+
+        <!-- Incidents List -->
+        <section class="surface">
+          <h2>Active Citizen Reports</h2>
+          <p style="color:var(--muted); font-size:0.85rem; margin-bottom:12px;">Submitted in the last 24 hours. Validated by safety models.</p>
+          <div class="list" id="incidentList">
+            <p class="empty">Loading recent reports...</p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

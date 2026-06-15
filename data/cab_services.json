@@ -1,0 +1,28 @@
+{
+  "zones": {
+    "central_station": { "cab_available": true, "auto_available": true, "avg_wait_min": 4, "surge_level": "normal" },
+    "market_street": { "cab_available": true, "auto_available": true, "avg_wait_min": 5, "surge_level": "normal" },
+    "tech_park": { "cab_available": true, "auto_available": true, "avg_wait_min": 6, "surge_level": "low" },
+    "university_gate": { "cab_available": true, "auto_available": true, "avg_wait_min": 7, "surge_level": "normal" },
+    "river_walk": { "cab_available": false, "auto_available": true, "avg_wait_min": 15, "surge_level": "high" },
+    "old_mill_road": { "cab_available": false, "auto_available": false, "avg_wait_min": 25, "surge_level": "critical" },
+    "east_metro": { "cab_available": true, "auto_available": true, "avg_wait_min": 5, "surge_level": "normal" },
+    "park_avenue": { "cab_available": true, "auto_available": true, "avg_wait_min": 8, "surge_level": "normal" },
+    "whitefield": { "cab_available": true, "auto_available": true, "avg_wait_min": 6, "surge_level": "low" },
+    "electronic_city": { "cab_available": true, "auto_available": true, "avg_wait_min": 7, "surge_level": "normal" },
+    "koramangala": { "cab_available": true, "auto_available": true, "avg_wait_min": 3, "surge_level": "normal" },
+    "indiranagar": { "cab_available": true, "auto_available": true, "avg_wait_min": 3, "surge_level": "normal" },
+    "marathahalli": { "cab_available": true, "auto_available": true, "avg_wait_min": 5, "surge_level": "normal" },
+    "hebbal": { "cab_available": true, "auto_available": true, "avg_wait_min": 6, "surge_level": "normal" },
+    "yelahanka": { "cab_available": true, "auto_available": true, "avg_wait_min": 10, "surge_level": "high" },
+    "kengeri": { "cab_available": true, "auto_available": true, "avg_wait_min": 12, "surge_level": "high" },
+    "rr_nagar": { "cab_available": true, "auto_available": true, "avg_wait_min": 8, "surge_level": "normal" },
+    "banashankari": { "cab_available": true, "auto_available": true, "avg_wait_min": 5, "surge_level": "normal" },
+    "jayanagar": { "cab_available": true, "auto_available": true, "avg_wait_min": 4, "surge_level": "normal" },
+    "majestic": { "cab_available": true, "auto_available": true, "avg_wait_min": 3, "surge_level": "normal" },
+    "devanahalli": { "cab_available": true, "auto_available": false, "avg_wait_min": 10, "surge_level": "high" },
+    "nelamangala": { "cab_available": false, "auto_available": true, "avg_wait_min": 20, "surge_level": "critical" },
+    "ramanagara": { "cab_available": false, "auto_available": true, "avg_wait_min": 30, "surge_level": "critical" },
+    "kanakapura": { "cab_available": false, "auto_available": false, "avg_wait_min": 40, "surge_level": "critical" }
+  }
+}

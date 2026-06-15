@@ -1,0 +1,113 @@
+[
+  {
+    "id": "SOS-8D91C209",
+    "user_name": "Demo SecureCommuter",
+    "zone_id": "old_mill_road",
+    "zone_name": "Old Mill Road",
+    "category": "harassment",
+    "lat": 12.862367,
+    "lng": 77.438362,
+    "message": "Assistance requested at current coordinates. Threat detected.",
+    "risk_level": "CRITICAL",
+    "women_mode": true,
+    "status": "simulated_dispatch_sent",
+    "created_at": "2026-06-15T13:55:57+00:00",
+    "notified_contacts": [
+      {
+        "id": "police_control",
+        "name": "City Police Control Room",
+        "type": "police",
+        "phone": "100",
+        "priority": 1
+      },
+      {
+        "id": "national_emergency",
+        "name": "National Emergency Response",
+        "type": "emergency",
+        "phone": "112",
+        "priority": 1
+      },
+      {
+        "id": "women_helpline",
+        "name": "Women Safety Helpline",
+        "type": "women_safety",
+        "phone": "1091",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "id": "SOS-3B004DA7",
+    "user_name": "Demo SecureCommuter",
+    "zone_id": "old_mill_road",
+    "zone_name": "Old Mill Road",
+    "category": "harassment",
+    "lat": 12.862367,
+    "lng": 77.438362,
+    "message": "Assistance requested at current coordinates. Threat detected.",
+    "risk_level": "CRITICAL",
+    "women_mode": true,
+    "status": "simulated_dispatch_sent",
+    "created_at": "2026-06-15T13:56:14+00:00",
+    "notified_contacts": [
+      {
+        "id": "police_control",
+        "name": "City Police Control Room",
+        "type": "police",
+        "phone": "100",
+        "priority": 1
+      },
+      {
+        "id": "national_emergency",
+        "name": "National Emergency Response",
+        "type": "emergency",
+        "phone": "112",
+        "priority": 1
+      },
+      {
+        "id": "women_helpline",
+        "name": "Women Safety Helpline",
+        "type": "women_safety",
+        "phone": "1091",
+        "priority": 1
+      }
+    ]
+  },
+  {
+    "id": "SOS-77E0CA6E",
+    "user_name": "Demo SecureCommuter",
+    "zone_id": "old_mill_road",
+    "zone_name": "Old Mill Road",
+    "category": "harassment",
+    "lat": 13.004,
+    "lng": 77.6037,
+    "message": "Assistance requested at current coordinates. Threat detected.",
+    "risk_level": "CRITICAL",
+    "women_mode": true,
+    "status": "simulated_dispatch_sent",
+    "created_at": "2026-06-15T17:03:05+00:00",
+    "notified_contacts": [
+      {
+        "id": "police_control",
+        "name": "City Police Control Room",
+        "type": "police",
+        "phone": "100",
+        "priority": 1
+      },
+      {
+        "id": "national_emergency",
+        "name": "National Emergency Response",
+        "type": "emergency",
+        "phone": "112",
+        "priority": 1
+      },
+      {
+        "id": "women_helpline",
+        "name": "Women Safety Helpline",
+        "type": "women_safety",
+        "phone": "1091",
+        "priority": 1
+      }
+    ]
+  }
+]

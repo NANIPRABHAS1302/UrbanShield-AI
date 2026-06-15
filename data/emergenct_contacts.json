@@ -1,0 +1,5 @@
+{
+  "deprecated": true,
+  "replacement": "emergency_contacts.json",
+  "note": "Kept only so old references do not break during demos."
+}

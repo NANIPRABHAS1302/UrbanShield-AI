@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Guardian Dashboard</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Route Analysis</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a href="sos.html">SOS</a>
+        <a class="active" href="guardian.html">Guardian</a>
+        <a href="incidents.html">Incidents</a>
+        <a href="safety_trends.html">Safety Trends</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>Guardian Control Hub</h1>
+          <p>Real-time companion tracking, route deviations, and emergency SMS contact controls.</p>
+        </div>
+        <div class="status-pill"><span class="status-dot" style="background:var(--green)"></span>Active Tracking Sync</div>
+      </section>
+
+      <section class="grid two">
+        <div class="grid">
+          <!-- Companion Sync Status -->
+          <div class="surface">
+            <h2>Active Tracking Status</h2>
+            <div id="guardianConfigPanel">
+              <div class="list-item" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <div>
+                  <strong>Live Tracking Share</strong>
+                  <p style="font-size:0.85rem; color:var(--muted)">Share secure telemetry link via SMS/email.</p>
+                </div>
+                <label class="toggle-row" style="padding:0;">
+                  <input type="checkbox" id="guardianShareCheckbox" checked />
+                  Active
+                </label>
+              </div>
+              
+              <div class="actions">
+                <button class="secondary" id="btnSimulateDeviation" type="button">Trigger Route Deviation Alert</button>
+                <a class="button-link danger" href="sos.html">Instant SOS Dispatch</a>
+              </div>
+            </div>
+            
+            <div id="deviationWarningBox" class="alert-banner" style="display:none; margin-top:20px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:24px;height:24px;color:var(--red)"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <div>
+                <strong style="color:var(--red);">⚠️ Route Deviation Alert!</strong>
+                <p style="font-size:0.85rem; color:var(--ink);">Vehicle has veered off the recommended safe route. Alerting emergency contacts...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trip details -->
+          <div class="surface">
+            <h2>Active Trip Tracking Feed</h2>
+            <div class="list" id="activeTripDetails">
+              <div class="list-item">
+                <div class="list-title"><span>Commute Route</span><span class="risk-badge risk-low">In Progress</span></div>
+                <div class="list-meta">Start: Central Station &rarr; End: Tech Park</div>
+                <div class="list-meta">Last Updated: Just now (via GPS)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <!-- Emergency Contacts Register -->
+          <section class="surface">
+            <h2>Emergency Contact Register</h2>
+            <div class="list" id="guardianContactList">
+              <p class="empty">Loading contacts registry...</p>
+            </div>
+          </section>
+
+          <!-- System Logs -->
+          <section class="surface">
+            <h2>Guardian Alert History</h2>
+            <div class="list" id="guardianAlertHistory">
+              <div class="list-item">
+                <div class="list-title"><span>Broadcast initialized</span><span style="font-size:0.8rem; color:var(--muted)">17:10</span></div>
+                <p style="font-size:0.85rem; color:var(--muted);">Security handshake completed. GPS coordinates verified.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      // Page specific logic for route deviation warning simulation
+      document.getElementById('btnSimulateDeviation')?.addEventListener('click', () => {
+        const warning = document.getElementById('deviationWarningBox');
+        if (warning) {
+          warning.style.display = warning.style.display === 'none' ? 'flex' : 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

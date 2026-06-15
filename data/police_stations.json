@@ -1,0 +1,14 @@
+{
+  "stations": [
+    { "name": "Koramangala Police Station", "zone_id": "koramangala", "phone": "080-2553-2100", "lat": 12.9340, "lng": 77.6260, "jurisdiction": ["koramangala", "jayanagar"] },
+    { "name": "Indiranagar Police Station", "zone_id": "indiranagar", "phone": "080-2527-4400", "lat": 12.9790, "lng": 77.6420, "jurisdiction": ["indiranagar", "east_metro"] },
+    { "name": "Whitefield Police Station", "zone_id": "whitefield", "phone": "080-2845-2100", "lat": 12.9700, "lng": 77.7510, "jurisdiction": ["whitefield", "marathahalli"] },
+    { "name": "Electronic City Police Station", "zone_id": "electronic_city", "phone": "080-2852-3100", "lat": 12.8410, "lng": 77.6780, "jurisdiction": ["electronic_city"] },
+    { "name": "Hebbal Police Station", "zone_id": "hebbal", "phone": "080-2333-4100", "lat": 13.0365, "lng": 77.5980, "jurisdiction": ["hebbal", "yelahanka"] },
+    { "name": "Majestic Police Station", "zone_id": "majestic", "phone": "080-2287-5100", "lat": 12.9772, "lng": 77.5720, "jurisdiction": ["majestic", "central_station"] },
+    { "name": "Banashankari Police Station", "zone_id": "banashankari", "phone": "080-2671-2100", "lat": 12.9260, "lng": 77.5475, "jurisdiction": ["banashankari", "rr_nagar"] },
+    { "name": "Kengeri Police Station", "zone_id": "kengeri", "phone": "080-2848-4100", "lat": 12.9055, "lng": 77.4830, "jurisdiction": ["kengeri", "ramanagara"] },
+    { "name": "Yelahanka Police Station", "zone_id": "yelahanka", "phone": "080-2846-2100", "lat": 13.1010, "lng": 77.5970, "jurisdiction": ["yelahanka", "devanahalli"] },
+    { "name": "Nelamangala Police Station", "zone_id": "nelamangala", "phone": "080-2772-2100", "lat": 13.1030, "lng": 77.3915, "jurisdiction": ["nelamangala"] }
+  ]
+}

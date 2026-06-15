@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UrbanShield AI — Emergency SOS Hub</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">US</span>
+        <span>UrbanShield AI</span>
+      </a>
+      
+      <nav class="nav">
+        <a href="../index.html">Overview</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="route_analysis.html">Routes</a>
+        <a href="women_mode.html">Women Mode</a>
+        <a class="active" href="sos.html">SOS</a>
+        <a href="guardian_dashboard.html">Guardian</a>
+        <a href="guardians.html">Contacts</a>
+        <a href="profile.html">Profile</a>
+        <a href="live_tracking.html">Live Track</a>
+        <a href="mobility_services.html">Mobility</a>
+        <a href="emergency_hub.html">Emergency</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="sys-info">
+          <div class="sys-info-item" id="sysLocation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Detecting...</span>
+          </div>
+          <div class="sys-info-item" id="sysTime">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>00:00:00</span>
+          </div>
+        </div>
+        <button class="theme-btn" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
+          <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="page-head">
+        <div>
+          <h1>Emergency SOS Dispatch</h1>
+          <p>Instant safety trigger. Automatically broadcasts coordinates, status updates, and alerts contacts.</p>
+        </div>
+      </section>
+
+      <section class="grid two">
+        <!-- SOS Trigger Center -->
+        <section class="surface" style="text-align: center;">
+          <h2>Instant Safety Broadcast</h2>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:20px;">Press the emergency button below to trigger simulated dispatch protocol.</p>
+          
+          <form id="sosForm">
+            <div class="sos-trigger-container">
+              <button type="submit" class="sos-trigger-btn" id="hugeSosBtn">SOS</button>
+            </div>
+
+            <!-- Parameters -->
+            <div class="form-grid" style="text-align: left; margin-top:20px;">
+              <label>User Identity
+                <input name="user_name" value="Demo SecureCommuter" placeholder="Full Name" />
+              </label>
+              <label>Current Zone Context
+                <select name="zone_id" data-zone-select data-default="old_mill_road"></select>
+              </label>
+              
+              <label>Emergency Category
+                <select name="sos_category" id="sosCategorySelect">
+                  <option value="harassment" selected>Harassment / Threat</option>
+                  <option value="medical">Medical Emergency</option>
+                  <option value="accident">Accident / Collision</option>
+                  <option value="breakdown">Vehicle Breakdown</option>
+                  <option value="unsafe_area">Unsafe Environment</option>
+                </select>
+              </label>
+              
+              <label>Critical Alert Level
+                <select name="risk_level">
+                  <option value="MODERATE">Moderate Response</option>
+                  <option value="HIGH">High Priority</option>
+                  <option value="CRITICAL" selected>Critical Danger (Immediate Dispatch)</option>
+                </select>
+              </label>
+
+              <!-- Geolocation simulation -->
+              <input type="hidden" name="lat" id="sosLat" />
+              <input type="hidden" name="lng" id="sosLng" />
+              
+              <label class="toggle-row full">
+                <input name="women_mode" type="checkbox" checked />
+                Apply priority escalation (Active Women Safety Mode)
+              </label>
+              
+              <label class="full">Incident Details / Speech-to-Text Notes
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <span>Voice Transcription / Text Notes</span>
+                  <button type="button" id="btnSimulateVoice" class="secondary" style="min-height:28px; padding:2px 8px; font-size:0.75rem; box-shadow:none; margin:0; display:inline-flex; align-items:center; gap:4px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 19v4M8 23h8"/></svg>
+                    Simulate Voice Ingest
+                  </button>
+                </div>
+                <textarea name="message" id="sosMessageArea" style="margin-top:8px;">Assistance requested at current coordinates. Threat detected.</textarea>
+              </label>
+            </div>
+          </form>
+          
+          <div class="result" id="sosResult"></div>
+        </section>
+
+        <section class="grid">
+          <!-- Emergency Contacts Panel -->
+          <section class="surface">
+            <h2>Primary Emergency Contacts</h2>
+            <div class="list">
+              <div class="list-item" style="border-left:4px solid var(--accent);">
+                <div class="list-title"><span>Guardian Prime (Family)</span><span>SMS Active</span></div>
+                <div class="list-meta">Phone: +1 (555) 912-3049</div>
+              </div>
+              <div class="list-item" style="border-left:4px solid var(--accent);">
+                <div class="list-title"><span>Local Safety Patrol</span><span>Broadcast Active</span></div>
+                <div class="list-meta">Dispatcher: Hot-line Sync</div>
+              </div>
+              <div class="list-item" style="border-left:4px solid var(--accent);">
+                <div class="list-title"><span>Transit Operator Dispatch</span><span>Line Active</span></div>
+                <div class="list-meta">Helpline: Route Control Center</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- History -->
+          <section class="surface">
+            <h2>SOS Broadcast Log</h2>
+            <div class="list" id="sosEvents">
+              <p class="empty">Synchronizing events...</p>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 UrbanShield AI. Predictive Safety Intelligence for Smart Urban Mobility.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      // Automatically attempt to populate hidden coordinates from system
+      navigator.geolocation?.getCurrentPosition((position) => {
+        document.getElementById("sosLat").value = position.coords.latitude;
+        document.getElementById("sosLng").value = position.coords.longitude;
+      });
+
+      // Voice ingest simulation
+      document.getElementById('btnSimulateVoice')?.addEventListener('click', () => {
+        const area = document.getElementById('sosMessageArea');
+        if (area) {
+          area.value = "Voice Ingest [" + new Date().toLocaleTimeString() + "]: Harassment warning near Old Mill Road. Seeking immediate dispatch.";
+        }
+      });
+    </script>
+  </body>
+</html>
